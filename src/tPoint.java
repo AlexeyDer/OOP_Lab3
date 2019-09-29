@@ -55,16 +55,39 @@ public class tPoint {
 				bx = true;
 			}
 		}
+		
+		
+
+		if (count_y == 0 && by && y < window_h - 40)
+			++this.y;
+		else {
+			if (by) {
+				count_y = moveCords(count_y);
+			}
+			by = false;
+			count_y = moveCords(count_y);
+
+			if (count_y == 1 && !by && y > 1)
+				--this.y;
+			else {
+				if (!by) {
+					count_y = moveCords(count_y);
+				}
+				by = true;
+			}
+		}
+		
+		
 
 		if (count_x == 0)
 			++this.x;
 		else
 			--this.x;
 
-//		if (count_y == 0 && y < window_h)
-//			++this.y;
-//		else
-//			--this.y;
+		if (count_y == 0)
+			++this.y;
+		else
+			--this.y;
 
 	}
 
